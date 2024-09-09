@@ -17,6 +17,10 @@ function Singlepage() {
             console.log(err);
         })
     },[])
+
+    function backPurchase(){
+        window.history.back()
+    }
     return (
         <div className="flex justify-center items-center h-screen p-4">
     <div className="card bg-base-100 shadow-xl flex flex-col max-w-sm w-full">
@@ -33,6 +37,8 @@ function Singlepage() {
                     <h2 className="card-title text-lg font-semibold p-2">{singleUser.title}</h2>
                     <p className="flex-1 p-2">{singleUser.description}</p>
                     <div className="card-actions mt-4 flex justify-end">
+                    <button className="btn w-full p-3 bg-blue-500 text-white" onClick={backPurchase}>Back to purchase
+                </button>
                     </div>
                 </div>
             </>
