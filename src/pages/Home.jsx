@@ -18,30 +18,30 @@ function Home() {
   },[])
   return (
     <>
-    <div>
-      {
-        products ? products.map((item)=>{
-          return (
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection : 'column',
-              alignItems: 'center',
-              margin: '20px',
-              border: '1px solid black',
-              padding: '10px',
-              flex: 'wrap'
-            }} key={item.id}>
-              <h3>{item.title}</h3>
-              <img width= '100px' src={item.image} alt={item.title} />
-              <p>${item.price}</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-4">
+        {products ? products.map((item) => (
+          <div key={item.id} className="card bg-base-100 shadow-xl flex flex-col">
+            <figure className="flex-shrink-0">
+              <img
+                className="w-full h-48 object-cover rounded-t-[20px]"
+                src={item.image}
+                alt={item.title}
+              />
+            </figure>
+            <div className="card-body flex-1 flex flex-col">
+              <h2 className="card-title text-lg font-semibold">{item.title}</h2>
+              <p className="flex-1">{item.description}</p>
+              <div className="card-actions mt-4 flex justify-end">
+                <button className="btn w-full p-3 bg-blue-500 text-white" onClick={() => document.getElementById('my_modal_' + item.id).showModal()}>
+                  Buy Now
+                </button>
+              </div>
             </div>
-          )
-        }): <h1>Loading...</h1>
-      }
-    </div>
+          </div>
+        )) : <h1>Loading...</h1>}
+      </div>
     </>
-  )
+  );
 }
 
 export default Home
