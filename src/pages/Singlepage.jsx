@@ -33,7 +33,6 @@ function Singlepage() {
                     <h2 className="card-title text-lg font-semibold p-2">{singleUser.title}</h2>
                     <p className="flex-1 p-2">{singleUser.description}</p>
                     <div className="card-actions mt-4 flex justify-end">
-                        {/* Add any actions or buttons here if needed */}
                     </div>
                 </div>
             </>
