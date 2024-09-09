@@ -16,6 +16,11 @@ function Home() {
       console.log(err);
     })
   },[])
+
+  function buyNow(item){
+    console.log(item);
+  }
+  
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-4">
@@ -32,7 +37,7 @@ function Home() {
               <h2 className="card-title text-lg font-semibold">{item.title}</h2>
               <p className="flex-1">{item.description}</p>
               <div className="card-actions mt-4 flex justify-end">
-                <button className="btn w-full p-3 bg-blue-500 text-white" onClick={() => document.getElementById('my_modal_' + item.id).showModal()}>
+                <button className="btn w-full p-3 bg-blue-500 text-white" onClick={()=>buyNow(item)}>
                   Buy Now
                 </button>
               </div>
