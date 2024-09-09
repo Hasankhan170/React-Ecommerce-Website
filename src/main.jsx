@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Service from './pages/Service.jsx'
+import Singlepage from './pages/Singlepage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -17,16 +18,20 @@ const router = createBrowserRouter([
         element : <Home />
       },
       {
-        path : 'about',
+        path : 'About',
         element : <About />
       },
       {
-        path : 'contact',
+        path : 'Contact',
         element : <Contact /> 
       },
       {
         path : 'Service',
         element : <Service/>
+      },
+      {
+        path : 'Singlepage/:id',
+        element : <Singlepage />
       },
       {
         path : '*',
