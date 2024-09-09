@@ -2,9 +2,9 @@
 
 function Service() {
   return (
-    <div>
-      
-    </div>
+    <>
+    <h1>Service</h1>
+    </>
   )
 }
 
